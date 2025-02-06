@@ -29,8 +29,8 @@ const Dashboard = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedDateFilter, setSelectedDateFilter] = useState("anytime");
   const [selectedCharts, setSelectedCharts] = useState({
-    Accuracy: true,
-    Loss: true,
+    TrainingAccuracy: true,
+    TrainingLoss: true,
     FinalAccuracy: true,
     FinalLoss: true,
   });
@@ -629,7 +629,7 @@ const Dashboard = () => {
               Comparison Charts
             </h2>
             <div style={{ display: "flex", gap: "16px" }}>
-              {selectedCharts.Accuracy && (
+              {selectedCharts.TrainingAccuracy && (
                 <div style={{ flex: 1, height: "400px", width: "540px" }}>
                   <Line data={{
                     labels: epochLabels,
@@ -645,13 +645,13 @@ const Dashboard = () => {
                       maintainAspectRatio: false,
                       scales: { y: { beginAtZero: true } },
                       plugins: { 
-                        title: { display: true, text: 'Accuracy', font: { size: 15 } },
+                        title: { display: true, text: 'Training Accuracy', font: { size: 15 } },
                         legend: { labels: { usePointStyle: true, pointStyle: 'circle' } } }
                     }}
                   />
                 </div>
               )}
-              {selectedCharts.Loss && (
+              {selectedCharts.TrainingLoss && (
                 <div style={{ flex: 1, height: "400px", width: "540px" }}>
                   <Line data={{
                     labels: epochLabels,
@@ -667,7 +667,7 @@ const Dashboard = () => {
                       maintainAspectRatio: false,
                       scales: { y: { beginAtZero: true } },
                       plugins: { 
-                        title: { display: true, text: 'Loss', font: { size: 15 } },
+                        title: { display: true, text: 'Training Loss', font: { size: 15 } },
                         legend: { labels: { usePointStyle: true, pointStyle: 'circle' } } }
                     }}
                   />
@@ -742,10 +742,10 @@ const Dashboard = () => {
     value={selectedDateFilter}
     onChange={(e) => setSelectedDateFilter(e.target.value)}
   >
-    <option value="anytime">Anytime</option>
-    <option value="today">last_24_hours</option>
-    <option value="last_week">Last Week</option>
-    <option value="last_month">Last Month</option>
+    <option value="anytime">All</option>
+    <option value="today">last 24 hours</option>
+    <option value="last_week">Last 7 days</option>
+    <option value="last_month">Last 30 days</option>
   </select>
 
         
