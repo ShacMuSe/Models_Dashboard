@@ -239,7 +239,7 @@ const Dashboard = () => {
           plugins: {
             title: { 
               display: true, 
-              text: 'Models per Category', 
+              text: 'Models per Project', 
               font: { size: 16, weight: "bold" }, 
               color: "#333" 
             },
@@ -736,14 +736,14 @@ const Dashboard = () => {
           ))}
         </select>
 
-        <h3>Select Date Range</h3>
+        <h3>Select Creation Date</h3>
   <select
     style={{ width: "90%", padding: "8px", marginBottom: "16px", borderRadius: "6px", background: "#fff" }}
     value={selectedDateFilter}
     onChange={(e) => setSelectedDateFilter(e.target.value)}
   >
     <option value="anytime">Anytime</option>
-    <option value="today">Today</option>
+    <option value="today">last_24_hours</option>
     <option value="last_week">Last Week</option>
     <option value="last_month">Last Month</option>
   </select>

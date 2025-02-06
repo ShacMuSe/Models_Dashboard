@@ -2,11 +2,6 @@ from link_mongoDB import models_collection
 
 from datetime import datetime, timedelta
 
-# today's date
-today_date = datetime(2025, 2, 5)
-
-from datetime import datetime, timedelta
-
 today_date = datetime.today()
 
 models_db = [
@@ -58,7 +53,7 @@ models_db = [
         "loss": [round(0.8 - (i / 100) * 0.4, 4) for i in range(100)],
         "training_time": 190,
         "gpu_used": "GPU2",
-        "training_date": (today_date - timedelta(days=8)).strftime("%Y-%m-%d")
+        "training_date": (today_date - timedelta(days=0)).strftime("%Y-%m-%d")
     },
     {
         "name": "random_stuff",
